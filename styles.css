@@ -335,3 +335,98 @@ a.project-link:hover { border-color: #9ba9e7; background: #f0f2ff; color: #253aa
   .hero-socials a { min-height: 40px; padding: 8px 9px; gap: 5px; font-size: 11px; }
   .hero-socials .social-icon { width: 15px; height: 15px; }
 }
+
+/* Skills are grouped into readable cards with compact, consistent tags. */
+.skills-grid { display: block; }
+.skills-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 30px; }
+.skills-heading h2 { margin: 0; }
+.skills-overline { padding: 7px 10px; border: 1px solid #e1e7f0; border-radius: 999px; color: #66738a; font: 600 10px/1 var(--sans); letter-spacing: .08em; }
+.skill-groups { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; border: 0; }
+.skill-group { padding: 22px; border: 1px solid #dfe5ef; border-radius: 12px; background: linear-gradient(145deg,#fff,#fbfcff); box-shadow: 0 8px 24px #2636530c; }
+.skill-group h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 16px; color: #202c43; font: 750 16px/1.35 var(--display); letter-spacing: -.025em; }
+.skill-group h3::before { content: ""; width: 8px; height: 8px; flex: 0 0 auto; border: 2px solid #5d72c7; border-radius: 3px; transform: rotate(45deg); }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.skill-tags span { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid #e0e6ef; border-radius: 7px; background: #fff; box-shadow: 0 2px 5px #26365308; color: #47556c; font: 600 12px/1.35 var(--sans); }
+.skill-tags span::before { content: "✓"; display: grid; place-items: center; width: 15px; height: 15px; flex: 0 0 auto; border-radius: 50%; background: #edf1ff; color: #5268bd; font: 700 9px/1 var(--sans); }
+.skill-tags span:hover { border-color: #bdc9ed; background: #f7f8ff; color: #334678; box-shadow: 0 3px 9px #384d9a12; }
+.credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 18px; padding-top: 0; border: 0; }
+.credential-card { padding: 18px 20px; border: 1px solid #e2e7ef; border-radius: 10px; background: #f8faff; }
+.credential-card > span { color: #5366b5; font: 700 10px/1.3 var(--sans); letter-spacing: .08em; }
+.credential-card p { margin: 12px 0 0; color: #334158; font-size: 13px; line-height: 1.5; }
+.credential-card small { margin-top: 3px; color: #7c8799; font-size: 11px; }
+@media (max-width: 620px) {
+  .skills-heading { align-items: flex-start; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+  .skill-groups,.credentials { grid-template-columns: 1fr; gap: 12px; }
+  .skill-group { padding: 18px; }
+  .skill-group h3 { font-size: 15px; }
+  .skill-tags { gap: 6px; }
+  .skill-tags span { font-size: 11px; }
+}
+
+/* Increase contrast so the category cards and individual skill boxes read clearly. */
+.skill-group { border: 1px solid #d8e0ee; border-top: 3px solid #6378c5; background: linear-gradient(145deg,#fff,#f8faff); box-shadow: 0 8px 24px #26365312; }
+.skill-tags span { padding: 8px 11px; border-color: #dce4f1; background: #f7f9fe; color: #34425b; font-weight: 650; }
+.skill-tags span::before { width: 16px; height: 16px; border-radius: 50%; background-color: #5268bd; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3.5 8.2 3 3 6-6' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-position: center; background-size: 11px 11px; background-repeat: no-repeat; }
+.skill-group { border: 2px solid #cbd7eb; border-top: 4px solid #5268bd; background: #f7f9ff; box-shadow: 0 10px 28px #26365318; }
+.skill-tags span { border: 1px solid #c6d2e7; background: #fff; box-shadow: 0 2px 7px #26365312; }
+
+/* Keep the skills cards close to the project's clean white card style. */
+.skill-group { padding: 20px; border: 1px solid #e0e6ef; border-radius: 8px; background: #fff; box-shadow: 0 8px 28px #25375208; }
+.skill-group h3 { margin-bottom: 13px; color: #172033; font-size: 15px; }
+.skill-group h3::before { display: none; }
+.skill-tags { gap: 8px; }
+.skill-tags span { gap: 7px; padding: 7px 10px; border: 1px solid #e5edf4; border-radius: 6px; background: #fbfdff; box-shadow: none; color: #40556c; font-size: 11px; font-weight: 600; }
+.skill-tags span::before { content: ""; width: 14px; height: 14px; border: 0; border-radius: 0; background-color: transparent; background-repeat: no-repeat; background-position: center; background-size: contain; transform: none; }
+.skill-tags span:hover { border-color: #d5e5f0; background: #f5faff; box-shadow: none; color: #2b435d; }
+.skill-group:nth-child(1) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 6 3 12l5 6M16 6l5 6-5 6'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(2) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Cpath d='M3 8h18M7 6h.01'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(3) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5' width='16' height='6' rx='1'/%3E%3Crect x='4' y='13' width='16' height='6' rx='1'/%3E%3Cpath d='M7 8h.01M7 16h.01'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(4) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(5) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='5' r='2'/%3E%3Ccircle cx='5' cy='18' r='2'/%3E%3Ccircle cx='19' cy='18' r='2'/%3E%3Cpath d='m11 7-5 9m7-9 5 9M7 18h10'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(6) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v4m0 10v4M3 12h4m10 0h4M5.6 5.6l2.8 2.8m7.2 7.2 2.8 2.8m0-12.8-2.8 2.8m-7.2 7.2-2.8 2.8'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(7) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19V5M4 19h16m-13-4 4-4 3 3 5-7'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(8) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7h14M5 7l3-3M5 7l3 3M19 17H5m14 0-3-3m3 3-3 3'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(9) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 3h6m-5 0v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3m-7 12h12'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(10) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 18a4 4 0 1 1 1-7.9A5 5 0 0 1 18 9a4.5 4.5 0 0 1-1 9h-1m-4 0V12m-3 3 3-3 3 3'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(11) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='16' rx='2'/%3E%3Cpath d='m7 9 3 3-3 3m6 0h4'/%3E%3C/svg%3E"); }
+.skill-group:nth-child(12) .skill-tags span::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b7895' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m12 3 7 7-9 11-7-9 9-9Z'/%3E%3Cpath d='M12 3v10m-9-1 9 1 7-3'/%3E%3C/svg%3E"); }
+.experience-date { color: #8290a4; font-weight: 500; }
+.experience-date span { color: #a5afbd; font-weight: 400; }
+.company-summary { border-color: #e5edf4; background: #fbfdff; }
+
+/* LinkedIn-style progression between the two UpscaleBD roles. */
+.experience-timeline .experience-item { position: relative; }
+.experience-timeline .experience-item:first-child { border-bottom: 0; }
+.experience-timeline .experience-item::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 160px;
+  top: 35px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #8799bd;
+  border-radius: 50%;
+  background: radial-gradient(circle, #6479b8 0 3px, #fff 3.5px);
+  box-shadow: 0 0 0 3px #f1f4fa, 0 1px 4px #2636531c;
+}
+.experience-timeline .experience-item:first-child::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 166px;
+  top: 42px;
+  bottom: -42px;
+  width: 2px;
+  background: #dce4ef;
+}
+.experience-timeline .experience-main { padding-left: 9px; }
+@media (max-width: 850px) and (min-width: 621px) {
+  .experience-timeline .experience-item::before { left: 122px; }
+  .experience-timeline .experience-item:first-child::after { left: 128px; }
+}
+@media (max-width: 620px) {
+  .experience-timeline .experience-item::before { left: 0; top: 50px; }
+  .experience-timeline .experience-item:first-child::after { left: 6px; top: 57px; bottom: -57px; }
+  .experience-timeline .experience-main { padding-left: 21px; }
+}
